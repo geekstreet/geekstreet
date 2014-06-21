@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<title>my app</title>
+		<script src="js/lib/angular.js"></script>
+		<script src="js/lib/angular-route.js"></script>
+		<script src="js/lib/angular-resource.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/controllers/Controller.js"></script>
+	</head>
+	<body>
+		<a href="#/contact">Contact</a>
+		<a href="#/view2">view2</a>
+		<div id="searchbar" ng-controller="SearchBarCtrl">
+		<input type="text" name="search" id="search" ng-model="searchData">
+		<input type="button" value="Search" ng-click="search()">
+		</div>
+		<div ng-view=''></div>
+	</body>
+</html>
