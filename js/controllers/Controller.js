@@ -2,7 +2,10 @@ app.controller('SearchBarCtrl', ['$scope','$location', function($scope,$location
 	search = function(){
 		$location.path('/search='+$scope.searchData);
 	};
-	$scope.$watch('searchData',search);
+	$scope.$watch('searchData',function(){
+		if($scope.searchData!=undefined)
+			search();
+	});
 }])
 .controller('ProductCtrl', ['$scope','$route', function($scope,$route){
 }])

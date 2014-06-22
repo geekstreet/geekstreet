@@ -1,8 +1,8 @@
-<div ng-repeat="searchResult in searchResults">
-----------------------------------------------
-<div class="searchResult">
-	<div class="title">{{searchResult.title}}</div>
-	<div class="description">{{searchResult.description}}</div>
-</div>
-</div>
-----------------------------------------------
+<table class="search_results">
+	<tr class="search_result" ng-repeat="searchResult in searchResults | filter:searchData">
+		----------------------------------------------
+		<td class="title">{{searchResult.title}}</td>
+		<td class="description">{{searchResult.description}}</td>
+		----------------------------------------------
+	</tr>
+</table> 
