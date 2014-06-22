@@ -1,10 +1,10 @@
 app.controller('SearchBarCtrl', ['$scope','$location', function($scope,$location){
-	$scope.search = function(){
+	search = function(){
 		$location.path('/search='+$scope.searchData);
 	};
+	$scope.$watch('searchData',search);
 }])
 .controller('ProductCtrl', ['$scope','$route', function($scope,$route){
-	alert($route.current.params.productId);
 }])
 .controller('SearchCtrl', ['$scope','$route', function($scope,$route){
 	$scope.searchResults=[
@@ -14,5 +14,4 @@ app.controller('SearchBarCtrl', ['$scope','$location', function($scope,$location
 		'description':'super duper'
 		}]
 	$scope.searchData=$route.current.params.searchData;
-	alert($route.current.params.searchData);
 }])
