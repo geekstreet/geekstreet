@@ -1,5 +1,5 @@
 var app = angular.module('myapp',[ 'ngRoute','ngResource' ]);
-app.config(function ($routeProvider) {
+app.config(function ($routeProvider,$locationProvider) {
 	$routeProvider
 		.when('/contact',
 				{
@@ -16,4 +16,5 @@ app.config(function ($routeProvider) {
 					templateUrl: 'template/search.html',
 					controller:'SearchCtrl'
 		}).otherwise({ redirectTo: '/view2'});
+	  $locationProvider.html5Mode(true);
 });
