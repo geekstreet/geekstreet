@@ -1,4 +1,4 @@
-var app = angular.module('myapp',[ 'ngRoute','ngResource' ]);
+var app = angular.module('myapp',[ 'ngRoute','ngResource','GeekStreet.services' ]);
 app.config(function ($routeProvider) {
 	$routeProvider
 		.when('/contact',
@@ -9,7 +9,7 @@ app.config(function ($routeProvider) {
 					templateUrl: 'view2.html'
 		}).when('/product/:productId',
 				{
-					templateUrl: 'template/products.html',
+					templateUrl: 'template/product.html',
 					controller:'ProductCtrl'
 		}).when('/search=:searchData',
 				{

@@ -7,7 +7,8 @@ app.controller('SearchBarCtrl', ['$scope','$location', function($scope,$location
 			search();
 	});
 }])
-.controller('ProductCtrl', ['$scope','$route', function($scope,$route){
+.controller('ProductCtrl', ['$scope','$route','Product', function($scope,$route,Product){
+	$scope.product=Product().take($route.current.params.productId);
 }])
 .controller('SearchCtrl', ['$scope','$route', function($scope,$route){
 	$scope.searchResults=[
