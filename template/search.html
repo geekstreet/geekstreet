@@ -1,4 +1,5 @@
 <div class="search_result" ng-repeat="searchResult in searchResults | filter:searchData">
-	<div class="title">{{searchResult.title}}</div>
-	<div class="description">{{searchResult.description}}</div>
+	<a href="#/product/{{searchResult.id}}">
+		<div class="title">{{searchResult.title}}</div>
+	</a>
 </div>

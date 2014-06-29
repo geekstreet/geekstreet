@@ -13,12 +13,7 @@ app.controller('SearchBarCtrl', ['$scope','$location', function($scope,$location
 .controller('ProductlistCtrl', ['$scope','$route','ProductsService', function($scope,$route,ProductsService){
 	$scope.product_list=ProductsService().query();
 }])
-.controller('SearchCtrl', ['$scope','$route', function($scope,$route){
-	$scope.searchResults=[
-		{'title':'tomato',
-		'description':'super'},
-		{'title':'tomato',
-		'description':'super duper'
-		}]
+.controller('SearchCtrl', ['$scope','$route','SearchService',function($scope,$route,SearchService){
+	$scope.searchResults=SearchService().get_search_result();
 	$scope.searchData=$route.current.params.searchData;
 }])

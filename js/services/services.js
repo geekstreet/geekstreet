@@ -34,3 +34,11 @@ angular.module('GeekStreet.services',[])
 	return a;
 };
 })
+.factory('SearchService',function(ProductsService){
+	return function(){
+		a={
+			get_search_result:function(){return ProductsService().query()}
+		}
+		return a;
+	}
+})
