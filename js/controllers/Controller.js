@@ -10,6 +10,9 @@ app.controller('SearchBarCtrl', ['$scope','$location', function($scope,$location
 .controller('ProductCtrl', ['$scope','$route','Product', function($scope,$route,Product){
 	$scope.product=Product().take($route.current.params.productId);
 }])
+.controller('ProductlistCtrl', ['$scope','$route','ProductsService', function($scope,$route,ProductsService){
+	$scope.product_list=ProductsService().query();
+}])
 .controller('SearchCtrl', ['$scope','$route', function($scope,$route){
 	$scope.searchResults=[
 		{'title':'tomato',

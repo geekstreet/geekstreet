@@ -4,16 +4,20 @@ app.config(function ($routeProvider) {
 		.when('/contact',
 				{
 					templateUrl: 'template/contact.html'
-		}).when('/view2',
+		}).when('/home',
 				{
-					templateUrl: 'view2.html'
+					templateUrl: 'home.html'
 		}).when('/product/:productId',
 				{
 					templateUrl: 'template/product.html',
 					controller:'ProductCtrl'
+		}).when('/productlist',
+				{
+					templateUrl: 'template/productlist.html',
+					controller:'ProductlistCtrl'
 		}).when('/search=:searchData',
 				{
 					templateUrl: 'template/search.html',
 					controller:'SearchCtrl'
-		}).otherwise({ redirectTo: '/view2'});
+		}).otherwise({ redirectTo: '/home'});
 });
